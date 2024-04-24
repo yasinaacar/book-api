@@ -5,7 +5,7 @@ const errorHandler=(err, req, res, next)=>{
     if(err instanceof APIError){
         return res.status(err.statusCode || 400).json({
             success: false,
-            errorName: err.name,
+            errorName: err.name ?? "API Error",
             message: `${err.message}`
         });
     }else if(err instanceof UniqueValueError){
