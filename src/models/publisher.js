@@ -23,7 +23,13 @@ const publisherSchema=new Schema({
         type: String,
         unique: true,
         required: true
-    }
+    },
+    books:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Book"
+        }
+    ]
 });
 
 const Publisher=mongoose.model("Publisher", publisherSchema);

@@ -35,7 +35,7 @@ exports.put_author=async (req,res)=>{
     
     const {fullname, biography}=req.body;
     
-    let authorImg=null;
+    let authorImg=author.image;
     if(req.file){
         authorImg=req.file.filename;
     }

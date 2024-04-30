@@ -20,7 +20,7 @@ const storage=multer.diskStorage({
         if(fieldname=="authorImg"){
             fs.mkdirSync(path.join(rootDir, "/src/public/uploads/images/authors"),{recursive: true});
             cb(null, path.join(rootDir, "/src/public/uploads/images/authors"));
-        }else if(fieldname=="bookImages"){
+        }else if(fieldname=="bookImage"){
             fs.mkdirSync(path.join(rootDir, "/src/public/uploads/images/books"),{recursive: true});
             cb(null, path.join(rootDir, "/src/public/uploads/images/books"));
         }else{

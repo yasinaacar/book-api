@@ -31,12 +31,6 @@ const bookSchema=new mongoose.Schema({
         min: 1,
         required: true,
     },
-    isbn:{
-        type: String,
-        required: true,
-        unique: true,
-        trim: true
-    },
     barcode:{
         type: String,
         required: true,
@@ -52,13 +46,8 @@ const bookSchema=new mongoose.Schema({
         min: 0,
         default: 0
     },
-    images:{
+    image:{
         type: String
-    },
-    url:{
-        type: String,
-        required: true,
-        unique: true
     },
     authors:[
         {
@@ -74,7 +63,7 @@ const bookSchema=new mongoose.Schema({
     ],
     publisher: {type: mongoose.Schema.Types.ObjectId, ref: "Publisher"}
 
-});
+},{timestamps: true});
 
 const Book=mongoose.model("Book", bookSchema);
 

@@ -12,7 +12,13 @@ const categorySchema=new mongoose.Schema({
         required: true,
         unique: true,
         trim: true
-    }
+    },
+    books:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Book"
+        }
+    ]
 });
 
 const Category=mongoose.model("Category", categorySchema);
